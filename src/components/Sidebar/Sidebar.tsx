@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SidebarButton from './SidebarButton';
+import './sidebar.css'; // 스타일을 위한 CSS 파일 임포트
 
 type MenuItem = {
     label: string;
@@ -14,7 +15,7 @@ const menuItems: MenuItem[] = [
     // 필요에 따라 메뉴 추가
 ];
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
     const [activeTab, setActiveTab] = useState('/');
 
     const handleMenuClick = (path: string) => {
@@ -25,17 +26,17 @@ const Sidebar: React.FC = () => {
 
     return (
         <aside
-            style={{
-                width: 220,
-                height: '100vh',
-                background: '#f5f6fa',
-                borderRight: '1px solid #e1e1e1',
-                padding: '24px 0',
-                boxSizing: 'border-box',
-            }}
+            className='sidebar'
         >
-            <nav>
-                <div style={{ padding: '0 12px' }}>
+            {/* 사이드바 상단에 로고나 제목을 넣을 수 있다. */}
+            <div>
+                <h1>사이드 바</h1>
+                <p> 여기에 상단 정보를 넣을 수 있습니다.</p>
+            </div>
+
+            {/* 여기에 메뉴 버튼 및 Group이 들어간다. */}
+            <nav style={{ flex: 1, backgroundColor: '#4f4f4f' }}>
+                <div>   {/* 메뉴 아이템을 맵핑하여 버튼 생성 */}
                     {menuItems.map((item) => (
                         <SidebarButton
                             key={item.path}
@@ -48,6 +49,13 @@ const Sidebar: React.FC = () => {
                     ))}
                 </div>
             </nav>
+
+            {/* 여기에는 사용자 정보 및 설정 버튼이 들어간다. */}
+            <div style={{ flex: '0 0 auto', padding: '12px', marginTop: 'auto' }}>
+                <h3>User Info</h3>
+                <p>Username: John Doe</p>
+                <button style={{ marginTop: '10px' }}>Settings</button>
+            </div>
         </aside>
     );
 };
