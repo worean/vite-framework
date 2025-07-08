@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactLogo from '../../assets/react.svg';
 import SidebarButton from './SidebarButton';
 import './sidebar.css'; // 스타일을 위한 CSS 파일 임포트
 
@@ -29,9 +30,9 @@ const Sidebar = () => {
             className='sidebar'
         >
             {/* 사이드바 상단에 로고나 제목을 넣을 수 있다. */}
-            <div>
-                <h1>사이드 바</h1>
-                <p> 여기에 상단 정보를 넣을 수 있습니다.</p>
+            <div className='header'>
+                <img src={ReactLogo} alt="React Logo" />  
+                <text> Vite Framework</text>
             </div>
 
             {/* 여기에 메뉴 버튼 및 Group이 들어간다. */}
@@ -51,11 +52,6 @@ const Sidebar = () => {
             </nav>
 
             {/* 여기에는 사용자 정보 및 설정 버튼이 들어간다. */}
-            <div style={{ flex: '0 0 auto', padding: '12px', marginTop: 'auto' }}>
-                <h3>User Info</h3>
-                <p>Username: John Doe</p>
-                <button style={{ marginTop: '10px' }}>Settings</button>
-            </div>
         </aside>
     );
 };

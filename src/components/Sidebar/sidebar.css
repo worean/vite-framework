@@ -1,11 +1,10 @@
 /* File: src/components/Sidebar/sidebar.css */
 /* --- a/file:///Users/juyeong/Projects/vite-framework/src/components/Sidebar/sidebar.css */
 /* +++ b/file:///Users/juyeong/Projects/vite-framework/src/components/Sidebar/sidebar.css */
-/* @@ -1,0 +1,20 @@ */ 
+/* @@ -1,0 +1,20 @@ */
 
 
-.sidebar
-{
+.sidebar {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -15,8 +14,22 @@
     border-right: 1px solid #afafaf;
 }
 
-.sidebar button
-{
+.sidebar .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+    align-items: center;
+    
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+
+.sidebar button {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -26,13 +39,11 @@
     cursor: pointer;
 }
 
-.sidebar button:hover
-{
+.sidebar button:hover {
     background-color: skyblue;
 }
 
-.sidebar button:active
-{
+.sidebar button:active {
     outline: 2px solid skyblue;
     background-color: #dfdfdf;
     outline-offset: -2px;
